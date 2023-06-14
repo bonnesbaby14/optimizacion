@@ -20,27 +20,20 @@ surfc(X,Y,Z);
 NITER=300;
 K=0;
 
-%initialization of the candidate soolution
 xrange=range(2)-range(1);
 yrange=range(4)-range(3);
 xn=rand*xrange+range(1);
 yn=rand*yrange+range(3);
 
-%X k+1=xk +Ax fitness
-
-%starting point of the optimization process
 while (K<NITER)
     if((xn>=range(1)) && (xn<=range(2)) && (yn>=range(3)) && (yn<=range(4)))
         zn1=f(xn,yn);
     else 
-%if not, its assigned a low quality
         zn1=-1000;
     end
 
     figure(2)
-    %contour(X,Y,Z,15);hold on;
     surfc(X,Y,Z);
-    %plot3(xn,yn,f(xn,yn),".","markersize",10,"markerfacecolor","g");
     plot3(xn,yn,f(xn,yn),'o','Color','r', 'MarkerFaceColor','red','MarkerSize',5)
     drawnow;hold on;
     xnc=xn+randn*1;

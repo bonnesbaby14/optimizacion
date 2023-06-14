@@ -16,11 +16,11 @@ for i = 1:100
     x = linspace(-2,2,20); %area a graficar
     y = x';
     z = x.*exp(-x.^2-y.^2);
+
     figure(1);
     surf(x,y,z);
     hold on;
-    %3 argmentos x,y y z, 'simbolo',color,r,marcador,,coloe,tamaño de la
-    %esfera
+
     plot3(X(1),X(2),A(i,3),'o','Color','r','MarkerFaceColor','blue','MarkerSize',5);
     pause(0.8);
 end 
